@@ -5,35 +5,41 @@ import './button.scss';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, startIcon, endIcon, label, disabeShadow, ...props }) => {
-  const mode = primary ? 'btn--primary' : 'btn--secondary';
+export const Button = ({ color, size, variant, startIcon, endIcon, label, disabeShadow, disabled, ...props }) => {
   const shadow = disabeShadow ? '' : 'btn--shadow';
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
-  
+
   return (
     <button
       type="button"
-      className={['btn', `btn--${size}`, mode, shadow].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      disabled={disabled}
+      className={[
+        'btn',
+        `btn--${size}`, 
+        `btn--${color}`, 
+        `btn--${color}--${variant}`, 
+        `btn--${variant}`,
+        shadow, 
+      ].join(' ')}
       {...props}
     >
        {startIcon && <StartIconComponent className={`icon--${size}`} />}
        {label}
-       {/* {endIcon && <EndIconComponent  fontSize={size}  />} */}
+       {endIcon && <EndIconComponent className={`icon--${size}`} />}
     </button>
   );
 };
 
 Button.propTypes = {
   /**
-   * Is this the principal call to action on the page?
-   */
-  primary: PropTypes.bool,
-  /**
    * What background color to use
    */
-  backgroundColor: PropTypes.string,
+  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'danger']),
+  /**
+   * variant 
+   */
+  variant: PropTypes.oneOf(['classic', 'text', 'outline']),
   // disabeShadow
   disabeShadow: PropTypes.bool,
   // icon on the left
@@ -43,11 +49,12 @@ Button.propTypes = {
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
+  size: PropTypes.oneOf(['sm', 'md', 'lg']),
   /**
    * Button contents
    */
   label: PropTypes.string.isRequired,
+  disabled: PropTypes.bool,
   /**
    * Optional click handler
    */
@@ -55,11 +62,12 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
-  primary: false,
+  disabled: false,
+  color: 'default',
+  variant: 'classic',
   startIcon: '',
   endIcon: '',
-  size: 'medium',
+  size: 'sm',
   onClick: undefined,
   disabeShadow: false
 };
