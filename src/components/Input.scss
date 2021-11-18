@@ -6,7 +6,7 @@
     $white: #FFFFFF;
     .input-group {
         font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        background-color: $white;
+        background-color: transparent;
         color: $dark;
         display: inline-flex;
         flex-direction: column;
@@ -39,6 +39,7 @@
         &__input {
             cursor: pointer;
             display: inline-flex;
+            background-color: $white;
             gap: 5px;
             align-items: center;
             line-height: 1;

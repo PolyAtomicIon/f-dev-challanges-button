@@ -4,7 +4,7 @@ import './Input.scss';
 import TextareaAutosize from 'react-textarea-autosize';
 
 export const Input = ({ 
-  color, 
+  error, 
   size, 
   startIcon, 
   endIcon, 
@@ -23,6 +23,8 @@ export const Input = ({
   const isInputDisabled = disabled ? 'input-group__input--disabled' : '';
   const shadow = disabeShadow ? '' : 'input-group__input--shadow';
   const inputSize = multiline ? '' : `input-group__input--${size}`;
+
+  const color = error ? 'error' : 'default';
 
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
@@ -86,7 +88,7 @@ Input.propTypes = {
   /**
    * What background color to use
    */
-  color: PropTypes.oneOf(['default', 'error']),
+  error: PropTypes.bool,
   // disabeShadow
   disabeShadow: PropTypes.bool,
   // icon on the left
@@ -116,7 +118,7 @@ Input.propTypes = {
 
 Input.defaultProps = {
   disabled: false,
-  color: 'default',
+  error: false,
   startIcon: '',
   placeholder: 'Placeholder',
   label: 'Label', 

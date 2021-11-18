@@ -1,11 +1,28 @@
 import logo from './logo.svg';
 import './App.scss';
 import {Button} from './components/Button'
+import {Input} from './components/Input'
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+       <Input
+          label="Release"
+          placeholder="Checking"
+          startIcon="Alarm"
+          size="md"
+        />
+
+        <Input
+          label="Release"
+          placeholder="Checking"
+          startIcon="Alarm"
+          size="md"
+          error
+        />
+
         <Button
           label="Release"
           startIcon="Alarm"
