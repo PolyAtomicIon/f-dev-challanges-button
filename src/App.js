@@ -11,6 +11,36 @@ function App() {
           startIcon="Alarm"
           size="lg"
         />
+
+        <Button
+          label="Release"
+          endIcon="Alarm"
+          color="danger"
+          size="md"
+        />
+
+        <Button
+          label="Release"
+          startIcon="Alarm"
+          size="lg"
+          color="primary"
+          variant="outline"
+        /> 
+        <Button
+          label="Release"
+          startIcon="Alarm"
+          size="lg"
+          disabeShadow
+          variant="text"
+        />
+
+        <Button
+          label="Release"
+          startIcon="Alarm"
+          disabled
+          size="lg"
+          variant="outline"
+        />
       </header>
     </div>
   );
