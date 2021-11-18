@@ -21,9 +21,23 @@ export const Input = ({
   const isDisabled = disabled ? 'input-group--disabled' : '';
   const isInputDisabled = disabled ? 'input-group__input--disabled' : '';
   const shadow = disabeShadow ? '' : 'input-group__input--shadow';
+  const inputSize = multiline ? '' : `input-group__input--${size}`;
 
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
+
+  const inputClassNames = [
+    'input-group__input__field',
+    `input-group__input__field--${color}`, 
+  ].join(' ');
+  const inputProps = {
+    type: multiline ? 'textarea' : 'text',
+    rows: row,
+    disabled: disabled,
+    placeholder: placeholder,
+    className: inputClassNames,
+    ...props
+  }
 
   return (
     <div
@@ -44,21 +58,18 @@ export const Input = ({
           isInputDisabled,
           shadow, 
           "input-group__input",
-          `input-group__input--${size}`,
-          `input-group__input--${color}` 
+          `input-group__input--${color}`,
+          inputSize 
         ].join(' ')}
       >
         {startIcon && <StartIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--left`} />}
-        <input
-          type="text"
-          disabled={disabled}
-          placeholder={placeholder}
-          className={[
-            'input-group__input__field',
-            `input-group__input__field--${color}`, 
-          ].join(' ')}
-          {...props}
-        />
+
+        {
+          multiline 
+          ? <textarea {...inputProps} />
+          : <input {...inputProps} />
+        }
+
         {endIcon && <EndIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--right`} />}
       </div>
 

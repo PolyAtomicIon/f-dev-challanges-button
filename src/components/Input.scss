@@ -47,6 +47,7 @@
             border: 1px solid;
             padding: 0px 12px;
             margin: 4px 0px;
+            box-sizing: border-box;
             &--disabled {
                 opacity: 0.6;
                 cursor: not-allowed;
@@ -89,6 +90,7 @@
                 all: unset;
                 height: 100%;
                 width: 100%;
+                margin: 12px 0px;
                 color: $dark;
             }
             &__icon {
