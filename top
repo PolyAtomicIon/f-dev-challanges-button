@@ -1,0 +1,65 @@
+[33mcommit e5f79b7ae0c0bd22392b70b237b3e5a15cec1a5a[m[33m ([m[1;36mHEAD -> [m[1;32minput-challange[m[33m, [m[1;31morigin/input-challange[m[33m)[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 16:26:15 2021 +0600
+
+    fix.input.input states styling fixes
+
+[33mcommit 6b13ecbd5320e3f4313720707da591dc362df870[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 14:27:49 2021 +0600
+
+    feat.add styling for different button states
+
+[33mcommit fc721cb6bdbc7912707c2814c919d746d011b40a[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 13:33:25 2021 +0600
+
+    styling
+
+[33mcommit 9438a1569ed107fae0b53a5d38ffecb1f8243812[m[33m ([m[1;32micons-conf[m[33m)[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 12:33:37 2021 +0600
+
+    feat.input component
+
+[33mcommit 36647d8158d8b2efe199fb3c653219123397a8e4[m[33m ([m[1;31morigin/icons-conf[m[33m)[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 11:36:35 2021 +0600
+
+    demo added
+
+[33mcommit 8010f25d4dbefde5a36943542ba5554a5dce3e65[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Thu Nov 18 11:27:27 2021 +0600
+
+    refactored
+
+[33mcommit 158be5aae981102c24d9ca2fb0b06f245a8439fc[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: PolyAtomicIon <180107265@stu.sdu.edu.kz>
+Date:   Wed Nov 17 17:04:01 2021 +0600
+
+    first commit
+
+[33mcommit cdd91384e3a7e7daf92ae01f03d3c18976b1fdbf[m
+Author: Bekzat Yernat <180107265@stu.sdu.edu.kz>
+Date:   Wed Nov 17 16:58:07 2021 +0600
+
+    first commit
+
+[33mcommit 3065d648b6ac38cd32f552ca2fed657afc468665[m
+Author: Bekzat Yernat <180107265@stu.sdu.edu.kz>
+Date:   Wed Nov 17 16:57:52 2021 +0600
+
+    v1
+
+[33mcommit f04fd28639769ac283414588d9074c54f679e4b3[m
+Author: Bekzat Yernat <180107265@stu.sdu.edu.kz>
+Date:   Wed Nov 17 15:20:51 2021 +0600
+
+    feat.add dynamic load for buttons and size customization
+
+[33mcommit 3073055cf8aac6a99cb36299f74cbebafe1a4651[m
+Author: Bekzat Yernat <180107265@stu.sdu.edu.kz>
+Date:   Wed Nov 17 12:38:45 2021 +0600
+
+    Initialize project using Create React App

@@ -5,36 +5,18 @@
     $dark: #333333;
     $white: #FFFFFF;
     .input-group {
-        position: relative;
-        box-sizing: border-box;
-        padding-left: 60px;
         font-family: 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        border: 0;
-        border-radius: 6px;
-        cursor: pointer;
-        display: inline-flex;
-        gap: 5px;
-        align-items: center;
-        line-height: 1;
-        border: 1px solid;
         background-color: $white;
-        border-color: $default;
         color: $dark;
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0px;
         &:not(.input-group--disabled) {
-            &:hover {
-                border-color: $dark;
-            }
             &:active,
             &:focus-within {
-                border-color: $primary;
                 color: $primary;
             }
-        }
-        &--disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-            background-color: #{$default}19;
         }
         &--default {
             border-color: $default;
@@ -51,46 +33,92 @@
                 }
             }
         }
-        &--shadow {
-            box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
-        }
-        &--sm {
-            font-size: 12px;
-            padding: 0px 8px;
-            height: 40px;
-        }
-        &--md {
-            font-size: 14px;
-            padding: 0px 12px;
-            height: 56px;
-        }
         &--fullwidth {
             width: 100%;
         }
-        &__label {}
-        &__help {}
         &__input {
-            all: unset;
-            height: 100%;
-            width: 100%;
-            color: $dark;
-        }
-        &__icon {
-            color: inherit;
-            &--left {
-                margin-left: auto;
+            cursor: pointer;
+            display: inline-flex;
+            gap: 5px;
+            align-items: center;
+            line-height: 1;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid;
+            padding: 0px 12px;
+            margin: 4px 0px;
+            &--disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                background-color: #{$default}19;
             }
-            &--right {
-                margin-right: auto;
+            &--default {
+                &:not(.input-group__input--disabled) {
+                    &:hover {
+                        border-color: $dark;
+                    }
+                    &:active,
+                    &:focus-within {
+                        border-color: $primary;
+                        color: $primary;
+                    }
+                }
+            }
+            &--error {
+                &:not(.input-group__input--disabled) {
+                    &:hover {
+                        border-color: $dark;
+                    }
+                    &:active,
+                    &:focus-within {
+                        border-color: $danger;
+                        color: $danger;
+                    }
+                }
+            }
+            &--shadow {
+                box-shadow: 0px 2px 3px rgba(51, 51, 51, 0.2);
             }
             &--sm {
-                font-size: 12px;
+                height: 40px;
             }
             &--md {
-                font-size: 14px;
+                height: 56px;
             }
-            &--lg {
-                font-size: 16px;
+            &__field {
+                all: unset;
+                height: 100%;
+                width: 100%;
+                color: $dark;
             }
+            &__icon {
+                color: inherit;
+                &--left {
+                    margin-left: auto;
+                }
+                &--right {
+                    margin-right: auto;
+                }
+                &--sm {
+                    font-size: 12px;
+                }
+                &--md {
+                    font-size: 14px;
+                }
+                &--lg {
+                    font-size: 16px;
+                }
+            }
+        }
+        &__label,
+        &__help {
+            all: unset;
+            display: block;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 17px;
+        }
+        &__help {
+            font-size: 10px;
         }
     }

@@ -17,22 +17,22 @@ const Template = (args) => <Input {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  label: 'Input',
+  label: 'Label',
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Input',
+  label: 'Label',
 };
 
 export const Large = Template.bind({});
 Large.args = {
   size: 'lg',
-  label: 'Input',
+  label: 'Label',
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'sm',
-  label: 'Input',
+  label: 'Label',
 };
