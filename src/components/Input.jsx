@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Input.scss';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export const Input = ({ 
   color, 
@@ -32,7 +33,7 @@ export const Input = ({
   ].join(' ');
   const inputProps = {
     type: multiline ? 'textarea' : 'text',
-    rows: row,
+    minRows: row,
     disabled: disabled,
     placeholder: placeholder,
     className: inputClassNames,
@@ -66,7 +67,7 @@ export const Input = ({
 
         {
           multiline 
-          ? <textarea {...inputProps} />
+          ? <TextareaAutosize {...inputProps} />
           : <input {...inputProps} />
         }
 
