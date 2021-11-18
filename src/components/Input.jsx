@@ -5,20 +5,22 @@ import './Input.scss';
 export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeShadow, disabled, ...props }) => {
   const shadow = disabeShadow ? '' : 'input-group--shadow';
   const fullWidth = disabeShadow ? '' : 'input-group--fullwidth';
+  const isDisabled = disabled ? 'input-group--disabled' : '';
+
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
 
   return (
-
     <div
+      tabIndex="0"
+      disabled={disabled}
       className={[
         'input-group',
         `input-group--${size}`, 
         `input-group--${color}`, 
-        `input-group--${color}--${variant}`, 
-        `input-group--${variant}`,
         shadow, 
-        fullWidth
+        fullWidth,
+        isDisabled
       ].join(' ')}
     >
       {startIcon && <StartIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--left`} />}
@@ -29,9 +31,6 @@ export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeS
         className={[
           'input-group__input',
           `input-group__input--${color}`, 
-          `input-group__input--${color}--${variant}`, 
-          `input-group__input--${variant}`,
-          shadow, 
         ].join(' ')}
         {...props}
       />
@@ -44,11 +43,7 @@ Input.propTypes = {
   /**
    * What background color to use
    */
-  color: PropTypes.oneOf(['default', 'primary', 'secondary', 'danger']),
-  /**
-   * variant 
-   */
-  variant: PropTypes.oneOf(['classic', 'text', 'outline']),
+  color: PropTypes.oneOf(['default', 'error']),
   // disabeShadow
   disabeShadow: PropTypes.bool,
   // icon on the left
@@ -73,7 +68,6 @@ Input.propTypes = {
 Input.defaultProps = {
   disabled: false,
   color: 'default',
-  variant: 'classic',
   startIcon: '',
   endIcon: '',
   size: 'sm',
