@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import './Input.scss';
 
 export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeShadow, disabled, ...props }) => {
-  const shadow = disabeShadow ? '' : 'btn--shadow';
+  const shadow = disabeShadow ? '' : 'input-group--shadow';
+  const fullWidth = disabeShadow ? '' : 'input-group--fullwidth';
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
 
@@ -17,8 +18,10 @@ export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeS
         `input-group--${color}--${variant}`, 
         `input-group--${variant}`,
         shadow, 
+        fullWidth
       ].join(' ')}
     >
+      {startIcon && <StartIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--left`} />}
       <input
         type="text"
         disabled={disabled}
@@ -32,7 +35,6 @@ export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeS
         ].join(' ')}
         {...props}
       />
-      {startIcon && <StartIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--left`} />}
       {endIcon && <EndIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--right`} />}
     </div>
   );
@@ -56,7 +58,7 @@ Input.propTypes = {
   /**
    * How large should the Input be?
    */
-  size: PropTypes.oneOf(['sm', 'md', 'lg']),
+  size: PropTypes.oneOf(['sm', 'md']),
   /**
    * Input contents
    */
