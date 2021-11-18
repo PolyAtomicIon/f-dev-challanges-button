@@ -10,17 +10,19 @@ export const Input = ({ color, size, variant, startIcon, endIcon, label, disabeS
   const StartIconComponent = startIcon && require(`@material-ui/icons/${startIcon}`).default
   const EndIconComponent = endIcon && require(`@material-ui/icons/${endIcon}`).default
 
+
+  
   return (
     <div
       tabIndex="0"
       disabled={disabled}
       className={[
+        isDisabled,
         'input-group',
         `input-group--${size}`, 
         `input-group--${color}`, 
         shadow, 
         fullWidth,
-        isDisabled
       ].join(' ')}
     >
       {startIcon && <StartIconComponent className={`input-group__icon input-group__icon--${size} input-group__icon--left`} />}
